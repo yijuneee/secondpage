@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>ANCORE PAGE</title>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+   <link rel="stylesheet" href="assets/css/main.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+   <style>
+      /* Header */
+      #header {
+          text-align: center;
+          padding: 3em 0 0 0;
+          background-color: #000; 
+          background-image: url("images/bg02.png"), url("images/bg02.png"), url("images/bg01.png");
+          background-position: top left, top left, top left;
+          background-size: 100% 6em, 100% 6em, auto;
+          background-repeat: no-repeat, no-repeat, repeat;
+      }
+
+      #header h1 {
+          padding: 0 0 1em 0;
+          margin: 0;
+      }
+
+      #header h1 a {
+          font-size: 2em;
+          letter-spacing: -0.025em;
+          color: #fff; 
+          border: 0;
+      }
+
+      #nav {
+          cursor: default;
+          background-color: #000; 
+          background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3)), url("images/bg01.png");
+          background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3)), url("images/bg01.png");
+          background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3)), url("images/bg01.png");
+          background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3)), url("images/bg01.png");
+          padding: 0;
+      }
+
+      #nav:after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 0.30em;
+          background-color: #ffadf3;
+      }
+
+      #nav > ul {
+          margin: 0;
+      }
+
+      #nav > ul > li {
+          position: relative;
+          display: inline-block;
+          margin-left: 1em;
+      }
+
+      #nav > ul > li a {
+          color: #fff;
+          text-decoration: none;
+          border: 0;
+          display: block;
+          padding: 1.5em 0.5em 1.35em 0.5em;
+      }
+
+      #nav > ul > li:first-child {
+          margin-right: 0em;
+      }
+
+      #nav > ul > li:hover a {
+          color: #fff;
+      }
+
+      #nav > ul > li.current {
+          font-weight: 600;
+      }
+
+      .menu-toggle {
+         display: flex;
+         flex-direction: column-reverse;
+         justify-content: center;
+         align-items: center;
+         width: 40px;
+         height: 40px;
+         background-color: transparent;
+         border: none;
+         cursor: pointer;
+         margin-top: -5em;
+      }
+
+      .menu-toggle .bar {
+         width: 30px;
+         height: 3px;
+         background-color: #ffadf3;
+         margin: 3px 0;
+         margin-left: 3em;
+      }
+
+      .search-box {
+         display: flex;
+         align-items: center;
+         justify-content: flex-end;
+         margin-left: auto;
+      }
+
+      .search-box input[type="text"] {
+         width: 200px;
+         padding: 6px;
+         border: none;
+         border-bottom: 1px solid #fff;
+         background-color: transparent;
+         color: #fff;
+         font-size: 16px;
+         margin-right: 10px;
+      }
+
+      .search-box input[type="text"]::placeholder {
+         color: #fff;
+         opacity: 0.5;
+      }
+
+      .search-btn {
+         background-color: transparent;
+         border: none;
+         color: #fff;
+         font-size: 20px;
+         cursor: pointer;
+      }
+
+      #nav ul {
+         display: flex;
+         align-items: center;
+         margin-left: auto;
+      }
+
+      #nav .login-btn,
+      #nav .signup-btn {
+         margin-left: 10px;
+         color: #fff;
+         background-color: transparent;
+         border: none;
+         display: flex;
+         align-items: center;
+      }
+
+      #nav .login-btn i {
+         margin-right: 5px;
+      }
+   </style>
+</head>
+<body class="is-preload">
+   <div id="page-wrapper">
+      <!-- Header -->
+      <div id="header">
+         <!-- Logo -->
+         <h1><a href="index.html" id="logo">ANCORE PAGE</a></h1>
+         <!-- Nav -->
+         <nav id="nav">
+            <button class="menu-toggle" onclick="toggleMenu()">
+               <span class="bar"></span>
+               <span class="bar"></span>
+               <span class="bar"></span>
+            </button>
+            <ul>
+               <li><a href="concert.html"><strong><u>공연</u></strong></a></li>
+               <li><a href="reservation.html">예매처</a></li>
+               <li><a href="event.html">이벤트</a></li>
+               <li><a href="community.html">커뮤니티</a></li>
+               <li><a href="calendar.html">캘린더</a></li>
+               <li><a href="rank.html">순위</a></li>
+               <li><a href="concerthall.html">공연장</a></li>
+            </ul>
+            <div class="search-box">
+               <input type="text" placeholder="검색" />
+               <button class="search-btn"><i class="fas fa-search"></i></button>
+               <button class="login-btn"><i class="fas fa-user"></i>로그인</button>
+               <button class="signup-btn">회원가입</button>
+            </div>
+         </nav>
+      </div>
+      <script>
+         function toggleMenu() {
+            document.getElementById("nav").classList.toggle("show");
+         }
+      </script>
+   </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+   <title>My Web Page</title>
+   <style>
+      /* 전체 페이지 스타일 */
+      body {
+         font-family: Arial, sans-serif;
+      }
+
+      /* 상단 영역 스타일 */
+      .top-section {
+         text-align: left;
+      }
+
+      .top-section p {
+         font-size: 10pt;
+         margin-bottom: 5px;
+      }
+
+      .top-section strong {
+         font-size: 20pt;
+         font-weight: bold;
+      }
+
+      /* 구분선 스타일 */
+      .divider {
+         border-top: 2px solid black;
+         margin-bottom: 20px;
+      }
+
+      /* 가운데 영역 스타일 */
+      .middle-section {
+         display: flex;
+      }
+
+      /* 왼쪽 영역 스타일 */
+      .left-section {
+         position: relative; /* 하트 버튼을 포스터 위에 겹쳐 표시하기 위해 */
+         width: 30%;
+         margin-right: 100px; /* 포스터 이미지와 간격을 두기 위한 우측 마진 추가 */
+      }
+
+      .left-section img {
+         width: 100%;
+         height: auto;
+         display: block;
+         margin-bottom: 20px;
+      }
+
+      /* 하트 버튼 스타일 */
+      .heart-button {
+         position: absolute;
+         top: 10px;
+         right: 10px;
+         width: 30px;
+         height: 30px;
+         background-color: transparent;
+         border: none;
+         outline: none;
+         cursor: pointer;
+      }
+
+      .heart-button span {
+         display: block;
+         width: 100%;
+         height: 100%;
+         background-image: url('heart.png');
+         background-size: cover;
+         transition: background-color 0.3s ease;
+      }
+
+      .heart-button.clicked span {
+         background-color: pink;
+      }
+
+      /* 오른쪽 영역 스타일 */
+      .right-section {
+         width: 70%;
+         font-size: 10pt;
+         line-height: 1.4;
+      }
+
+      /* 11줄 폰트 스타일 */
+      .right-section p:nth-child(1),
+      .right-section p:nth-child(3),
+      .right-section p:nth-child(5) {
+         font-weight: bold;
+      }
+
+      /* 구분선 스타일 */
+      .right-section p:nth-child(4)::after,
+      .right-section p:nth-child(7)::after {
+         content: "";
+         display: block;
+         border-top: 2px solid black;
+         margin-top: 10px;
+      }
+
+      /* 10pt 크기의 폰트 스타일 */
+      .right-section p:nth-child(5) span,
+      .right-section p:nth-child(6) span,
+      .right-section p:nth-child(7) span {
+         font-size: 10pt;
+         font-weight: normal; /* 일반 굵기 폰트로 설정 */
+         margin-bottom: 50px; /* 폰트와 폰트 사이 간격 추가 */
+      }
+
+      /* 날짜 전체 보기 버튼 스타일 */
+      .popup-button {
+         display: inline-block;
+         background-color: #f8f8f8;
+         border: 1px solid #ccc;
+         padding: 5px 10px;
+         border-radius: 4px;
+         cursor: pointer;
+      }
+
+      /* 팝업 스타일 */
+      .popup {
+         display: none;
+         position: absolute;
+         top: 100px;
+         left: 50%;
+         transform: translateX(-50%);
+         background-color: white;
+         border: 1px solid #ccc;
+         padding: 20px;
+      }
+
+      .popup-content {
+         max-height: 300px;
+         overflow-y: auto;
+      }
+
+      /* 공연 후기 댓글 스타일 */
+      .comment-section {
+         margin-top: 20px;
+         border-top: 2px solid black;
+         padding-top: 20px;
+      }
+
+      .rating {
+         display: flex;
+         align-items: center;
+         margin-bottom: 10px;
+      }
+
+      .rating label {
+         font-weight: bold;
+      }
+
+      .rating input[type="radio"] {
+         display: none;
+      }
+
+      .rating .star {
+         display: inline-block;
+         width: 20px;
+         height: 20px;
+         background-color: white;
+         border: 1px solid black;
+         margin-right: 5px;
+         cursor: pointer;
+      }
+
+      .rating .star:hover,
+      .rating input[type="radio"]:checked ~ .star {
+         background-color: black;
+      }
+
+      .comment textarea {
+         width: 100%;
+         height: 100px;
+         resize: vertical;
+         margin-bottom: 10px;
+      }
+
+      .comment button {
+         background-color: black;
+         color: white;
+         padding: 5px 10px;
+         border: none;
+         cursor: pointer;
+      }
+
+   </style>
+</head>
+<body>
+   <div class="top-section">
+      <p>공연 > 아이돌</p>
+      <strong>2023 WEi SHOW-CON [Eternal Sunshine]</strong>
+      <i class="fas fa-share-alt share-icon"></i>
+   </div>
+
+   <div class="divider"></div>
+
+   <div class="middle-section">
+      <div class="left-section">
+         <img src="poster.jpg" alt="포스터">
+         <button class="heart-button" onclick="toggleHeartButton(this)"><span></span></button>
+      </div>
+      <div class="right-section">
+         <p>공연기간 안내</p>
+         <p>2023년 06월 28일 (수) 오후 8시</p>
+         <p>상세정보 안내</p>
+         <p><a href="http://ticket.yes24.com/Special/46081">http://ticket.yes24.com/Special/46081</a></p>
+         <p><strong>티켓오픈 날짜</strong><span>     <a href="#" class="popup-button" onclick="togglePopup()">일반예매 2023년 06월 09일 (금) 오후 8시 > <span id="popup-text">날짜 전체 보기</span></a></span></p>
+         <p><strong>티켓가격</strong><span>     전석 88,000원</span></p>
+         <p><strong>예매 사이트</strong><span>     <u>Yes24</u> > <u>예매하기</u></span></p>
+         <p><strong>장소</strong></p>
+         <p><u>YES24 LIVE HALL</u></p>
+         <p><strong>대형보기</strong></p>
+         <p><u>WEi(위아이)</u></p>
+      </div>
+   </div>
+
+   <div class="popup" id="popup">
+      <div class="popup-content">
+         <p><strong>팬클럽 선예매</strong></p>
+         <p>2023.06.30 20:00</p>
+         <p><strong>티켓오픈</strong></p>
+         <p>2023.07.05 20:00</p>
+
+      </div>
+   </div>
+
+   <div class="comment-section">
+      <h3>공연 후기</h3>
+      <div class="rating">
+         <label>평점:</label>
+         <input type="radio" name="rating" id="star1">
+         <label class="star" for="star1"></label>
+         <input type="radio" name="rating" id="star2">
+         <label class="star" for="star2"></label>
+         <input type="radio" name="rating" id="star3">
+         <label class="star" for="star3"></label>
+         <input type="radio" name="rating" id="star4">
+         <label class="star" for="star4"></label>
+         <input type="radio" name="rating" id="star5">
+         <label class="star" for="star5"></label>
+      </div>
+      <div class="comment">
+         <textarea placeholder="댓글을 작성하세요 (최대 100자)"></textarea>
+         <button>작성</button>
+      </div>
+   </div>
+
+   <script>
+      function toggleHeartButton(button) {
+         button.classList.toggle("clicked");
+      }
+
+      function togglePopup() {
+         var popup = document.getElementById("popup");
+         popup.style.display = (popup.style.display === "block") ? "none" : "block";
+         var popupText = document.getElementById("popup-text");
+         popupText.innerHTML = (popup.style.display === "block") ? "메모장 닫기" : "날짜 전체 보기";
+      }
+   </script>
+</body>
+</html>
+
